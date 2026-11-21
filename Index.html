@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jobs in Pakistan</title>
+<style>
+body{margin:0;font-family:Arial;background:#f2f6f3;color:#222}
+header{background:#123b32;color:white;padding:25px;text-align:center}
+header h1{margin:0}
+.hero{background:#1c654d;color:white;padding:35px 15px;text-align:center}
+input,select{padding:13px;margin:5px;border:1px solid #ddd;border-radius:7px;width:85%;max-width:300px}
+button{padding:13px 22px;background:#f3bd50;border:0;border-radius:7px;font-weight:bold}
+section{padding:22px;max-width:950px;margin:auto}
+h2{color:#174c3b}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.card,.job{background:white;padding:17px;border-radius:10px;border:1px solid #ddd}
+.job{margin:12px 0}
+.job a{background:#17634d;color:white;padding:9px 15px;border-radius:6px;display:inline-block}
+footer{background:#123b32;color:white;text-align:center;padding:20px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>JOBS IN PAKISTAN</h1>
+<p>Your Future Starts Here</p>
+</header>
+
+<div class="hero">
+<h2 style="color:white">Find Your Dream Job</h2>
+<p>Latest Government & Private Jobs</p>
+<input id="search" placeholder="Search Jobs">
+<br>
+<button onclick="filterJobs()">Search Jobs</button>
+</div>
+
+<section>
+<h2>Browse Categories</h2>
+<div class="grid">
+<div class="card">Government Jobs</div>
+<div class="card">Private Jobs</div>
+<div class="card">Bank Jobs</div>
+<div class="card">Teaching Jobs</div>
+<div class="card">Police Jobs</div>
+<div class="card">Army Jobs</div>
+<div class="card">Azad Kashmir Jobs</div>
+<div class="card">Online Jobs</div>
+</div>
+</section>
+
+<section>
+<h2>Latest Jobs</h2>
+<div id="jobs">New jobs will appear here.</div>
+</section>
+
+<footer>
+<p>Jobs in Pakistan © 2026</p>
+<p>Find Opportunities Across Pakistan</p>
+</footer>
+
+<script>
+const SHEET_URL="PASTE_GOOGLE_SHEET_CSV_LINK_HERE";
+
+async function loadJobs(){
+if(!SHEET_URL.startsWith("https://"))return;
+try{
+let response=await fetch(SHEET_URL);
+let
